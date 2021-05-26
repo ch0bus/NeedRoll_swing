@@ -32,7 +32,7 @@ public class NeedRollSwing {
         JPanel rootCenterPanel = new JPanel();
         rootCenterPanel.setLayout(new FlowLayout());
         rootCenterPanel.setSize(300, 200);
-        rootCenterPanel.setBackground(Color.red);
+        rootCenterPanel.setBackground(Color.gray);
         
         return rootCenterPanel;
     }
@@ -49,7 +49,7 @@ public class NeedRollSwing {
     JPanel rightPanel(){
         JPanel rootRightPanel = new JPanel();
         rootRightPanel.setLayout(new GridLayout(4,0));
-        rootRightPanel.setBackground(Color.yellow);
+        rootRightPanel.setBackground(Color.black);
         
         JTextArea t1,t2;  
         t1=new JTextArea("Welcome \nto \nJavatpoint.");  
@@ -70,6 +70,7 @@ public class NeedRollSwing {
         JPanel rootLeftPanel = new JPanel();
         rootLeftPanel.setLayout(new GridLayout(20,0));                           // 8-rows; 0-col
         //rootLeftPanel.setSize(450, 150);
+        rootLeftPanel.setBackground(Color.black);
         
         JButton btnSelectRoom = new JButton("Комната");
         btnSelectRoom.setBounds(0, 0, 95, 30);
