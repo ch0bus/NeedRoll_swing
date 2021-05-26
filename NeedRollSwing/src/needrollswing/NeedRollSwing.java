@@ -86,17 +86,15 @@ public class NeedRollSwing {
         });
         
         JLabel jlTypeWallpaper = new JLabel("Тип обоев");
-        DefaultComboBoxModel fruitsName = new DefaultComboBoxModel();
-
-        fruitsName.addElement("Apple");
-        fruitsName.addElement("Grapes");
-        fruitsName.addElement("Mango");
-        fruitsName.addElement("Peer");
-
-        final JComboBox fruitCombo = new JComboBox(fruitsName);    
-        fruitCombo.setSelectedIndex(0);
+        DefaultComboBoxModel listTypeWallpaper = new DefaultComboBoxModel();
+        listTypeWallpaper.addElement("Бумажные");
+        listTypeWallpaper.addElement("Виниловые");
+        listTypeWallpaper.addElement("Текстильные");
+        listTypeWallpaper.addElement("Жидкие");
+        final JComboBox jcbListTypeWallpaper = new JComboBox(listTypeWallpaper);    
+        jcbListTypeWallpaper.setSelectedIndex(0);
         
-        rootLeftPanel.add(fruitCombo);
+        rootLeftPanel.add(jcbListTypeWallpaper);
         rootLeftPanel.setVisible(true);
         
         return rootLeftPanel;
@@ -112,11 +110,11 @@ public class NeedRollSwing {
         root.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);       
         
         
-        //root.add( , BorderLayout.NORTH);
-        //root.add( , BorderLayout.SOUTH);
-        //root.add( , BorderLayout.CENTER);
+        root.add(topPanel() , BorderLayout.NORTH);
+        root.add(bottomPanel() , BorderLayout.SOUTH);
+        root.add(centerPanel() , BorderLayout.CENTER);
         root.add(leftPanel() , BorderLayout.WEST);
-        //root.add( , BorderLayout.EAST);
+        root.add(rightPanel() , BorderLayout.EAST);
         
         root.setVisible(true);
     }
