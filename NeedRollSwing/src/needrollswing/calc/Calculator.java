@@ -173,6 +173,4 @@ public class Calculator implements AreaCalc{
             else
                 return (int)( (lengthWallpaper) / heightRoom );
         }
-
-
 }
