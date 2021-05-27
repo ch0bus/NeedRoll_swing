@@ -24,6 +24,7 @@ public class NeedRollSwing {
         rootTopPanel.setLayout(new FlowLayout());
         rootTopPanel.setBackground(Color.blue);
         //rootTopPanel.setSize(450, 150);
+       
         
         return rootTopPanel;
     }
@@ -31,9 +32,10 @@ public class NeedRollSwing {
     JPanel centerPanel(){
         JPanel rootCenterPanel = new JPanel();
         rootCenterPanel.setLayout(new FlowLayout());
-        rootCenterPanel.setSize(300, 200);
+        //rootCenterPanel.setSize(300, 200);
         rootCenterPanel.setBackground(Color.gray);
-        
+  
+                
         return rootCenterPanel;
     }
     
@@ -43,6 +45,29 @@ public class NeedRollSwing {
         rootBottomPanel.setBackground(Color.blue);
         //rootBottomPanel.setSize(450, 150);
         
+        JButton btnSave = new JButton("Сохранить");
+        btnSave.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae){
+                
+            }
+        });
+        JButton btnDiscard = new JButton("Сбросить");
+        btnDiscard.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae){
+                
+            }
+        });        
+        JButton btnExit = new JButton("Выход");
+        btnExit.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae){
+                
+            }
+        });
+        
+        rootBottomPanel.add(btnSave);
+        rootBottomPanel.add(btnDiscard);
+        rootBottomPanel.add(btnExit);
+        
         return rootBottomPanel;
     }
     
@@ -51,15 +76,17 @@ public class NeedRollSwing {
         rootRightPanel.setLayout(new GridLayout(4,0));
         rootRightPanel.setBackground(Color.black);
         
-        JTextArea t1,t2;  
-        t1=new JTextArea("Welcome \nto \nJavatpoint.");  
+        JTextArea jtaIntro, jtaRoom, jtaWall, jtaWindow, jtaDoor, jtaAdd, jtaDel, jtaWallpaper;
+        
+        jtaIntro = new JTextArea("Расчетные параметры",1,20);  
         //t1.setBounds(50,100, 200,30);  
-        t2=new JTextArea("AWT \nTutorial");  
+        //t2=new JTextArea("AWT \nTutorial");  
         //t2.setBounds(50,150, 200,30);  
     
-        rootRightPanel.add(t1);
-        rootRightPanel.add(t2);
+        rootRightPanel.add(jtaIntro);
+        //rootRightPanel.add(t2);
     
+        //rootRightPanel.setSize(200, 0);
         rootRightPanel.setVisible(true);
         
         return rootRightPanel;
@@ -68,15 +95,15 @@ public class NeedRollSwing {
     JPanel leftPanel(){
         
         JPanel rootLeftPanel = new JPanel();
-        rootLeftPanel.setLayout(new GridLayout(20,0));                           // 8-rows; 0-col
+        rootLeftPanel.setLayout(new GridLayout(15,0, 10,10));                           // 8-rows; 0-col
         //rootLeftPanel.setSize(450, 150);
         rootLeftPanel.setBackground(Color.black);
         
         JButton btnSelectRoom = new JButton("Комната");
-        btnSelectRoom.setBounds(0, 0, 95, 30);
+        //btnSelectRoom.setBounds(0, 0, 95, 30);
         btnSelectRoom.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
-                
+                JTextArea jtaTest = new JTextArea("Вы выбрали ");
             }
         });
         JButton btnSelectWall = new JButton("Стена");
@@ -89,6 +116,13 @@ public class NeedRollSwing {
         JButton btnAddWall = new JButton(" + Стена");
         //btnSelectRoom.setBounds(0, 0, 95, 30);
         btnAddWall.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae){
+                
+            }
+        });
+        JButton btnDelArea = new JButton(" - Стена");
+        //btnSelectRoom.setBounds(0, 0, 95, 30);
+        btnDelArea.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
                 
             }
@@ -107,13 +141,7 @@ public class NeedRollSwing {
                 
             }
         });
-        JButton btnDelArea = new JButton("Отнять");
-        //btnSelectRoom.setBounds(0, 0, 95, 30);
-        btnDelArea.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent ae){
-                
-            }
-        });
+        
         
         JLabel jlTypeWallpaper = new JLabel("Тип обоев");
         
@@ -128,9 +156,9 @@ public class NeedRollSwing {
         rootLeftPanel.add(btnSelectRoom);
         rootLeftPanel.add(btnSelectWall);
         rootLeftPanel.add(btnAddWall);
-        rootLeftPanel.add(btnAddWindow);
-        rootLeftPanel.add(btnAddDoor);
         rootLeftPanel.add(btnDelArea);
+        rootLeftPanel.add(btnAddWindow);
+        rootLeftPanel.add(btnAddDoor);        
         rootLeftPanel.add(jlTypeWallpaper);
         rootLeftPanel.add(jcbListTypeWallpaper);
         
