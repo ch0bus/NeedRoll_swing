@@ -23,7 +23,7 @@ public class NeedRollSwing {
     JFrame root = new JFrame("NeedRollSwing");
     
     
-    public static int choice = 0;
+    
     
     JPanel topPanel(){
         JPanel rootTopPanel = new JPanel();
@@ -46,20 +46,29 @@ public class NeedRollSwing {
     }
     JPanel centerPanel_Room(){
         JPanel rootCenterPanel = new JPanel();
-        rootCenterPanel.setLayout(new GridLayout(10,4));
-        //rootCenterPanel.setSize(300, 200);
         rootCenterPanel.setBackground(Color.green);
+        rootCenterPanel.setLayout(new FlowLayout());
+        JPanel layoutRoomParametr = new JPanel();
+        layoutRoomParametr.setLayout(new GridLayout(3,2,10,5));
         
         JLabel jlRoomParametr = new JLabel("Введите необходимы параметры");
+        JLabel jlRoomWidth = new JLabel("ширина");         
+        JLabel jlRoomLength = new JLabel("длина");
+        JLabel jlRoomHeight = new JLabel("высота");
+        JTextField jtfRoomWidth = new JTextField(5);
+        JTextField jtfRoomLength = new JTextField(5);
+        JTextField jtfRoomHeight = new JTextField(5);
         
-        JLabel jlWidthRoom = new JLabel("ширина комнаты");
-        JTextField jtfWidthRoom = new JTextField(15);
+        layoutRoomParametr.add(jlRoomWidth);
+        layoutRoomParametr.add(jtfRoomWidth);
+        layoutRoomParametr.add(jlRoomLength);
+        layoutRoomParametr.add(jtfRoomLength);
+        layoutRoomParametr.add(jlRoomHeight);
+        layoutRoomParametr.add(jtfRoomHeight);
         
+        //rootCenterPanel.add(jlRoomParametr);
+        rootCenterPanel.add(layoutRoomParametr);
         
-        rootCenterPanel.add(jlRoomParametr);
-        rootCenterPanel.add(jlWidthRoom);
-        rootCenterPanel.add(jtfWidthRoom);
-                
         return rootCenterPanel;
     }
     JPanel centerPanel_Wall(){
@@ -214,7 +223,7 @@ public class NeedRollSwing {
         
         //root.setLayout(new BorderLayout());
         root.setSize(800,600);
-        root.setResizable(false);
+        root.setResizable(true);
         root.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         root.add(topPanel() , BorderLayout.NORTH);
