@@ -22,6 +22,7 @@ public class NeedRollSwing {
     
     JFrame root = new JFrame("NeedRollSwing");
     
+    
     public static int choice = 0;
     
     JPanel topPanel(){
@@ -45,10 +46,19 @@ public class NeedRollSwing {
     }
     JPanel centerPanel_Room(){
         JPanel rootCenterPanel = new JPanel();
-        rootCenterPanel.setLayout(new FlowLayout());
+        rootCenterPanel.setLayout(new GridLayout(10,4));
         //rootCenterPanel.setSize(300, 200);
         rootCenterPanel.setBackground(Color.green);
-  
+        
+        JLabel jlRoomParametr = new JLabel("Введите необходимы параметры");
+        
+        JLabel jlWidthRoom = new JLabel("ширина комнаты");
+        JTextField jtfWidthRoom = new JTextField(15);
+        
+        
+        rootCenterPanel.add(jlRoomParametr);
+        rootCenterPanel.add(jlWidthRoom);
+        rootCenterPanel.add(jtfWidthRoom);
                 
         return rootCenterPanel;
     }
@@ -130,14 +140,20 @@ public class NeedRollSwing {
         //btnSelectRoom.setBounds(0, 0, 95, 30);
         btnSelectRoom.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
-                choice = 1;
+                root.setLayout(new BorderLayout());
+                root.add(topPanel() , BorderLayout.NORTH);
+                root.add(bottomPanel() , BorderLayout.SOUTH);           
+                root.add(leftPanel() , BorderLayout.WEST);
+                root.add(rightPanel() , BorderLayout.EAST);
+                root.add(centerPanel_Room() , BorderLayout.CENTER);
+                root.setVisible(true);
             }
         });
         JButton btnSelectWall = new JButton("Стена");
         //btnSelectRoom.setBounds(0, 0, 95, 30);
         btnSelectWall.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
-                choice = 2;
+                
             }
         });
         JButton btnAddWall = new JButton(" + Стена");
@@ -196,25 +212,18 @@ public class NeedRollSwing {
     
     NeedRollSwing(){
         
-        root.setLayout(new BorderLayout());
-        root.setSize(900,800);
-        root.setBackground(Color.yellow);
-        root.setResizable(true);
-        root.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);         
+        //root.setLayout(new BorderLayout());
+        root.setSize(800,600);
+        root.setResizable(false);
+        root.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         root.add(topPanel() , BorderLayout.NORTH);
         root.add(bottomPanel() , BorderLayout.SOUTH);
-        //root.add(centerPanel() , BorderLayout.CENTER);
+        root.add(centerPanel() , BorderLayout.CENTER);
         root.add(leftPanel() , BorderLayout.WEST);
         root.add(rightPanel() , BorderLayout.EAST);
         
-        if(choice == 1)
-            root.add(centerPanel_Room() , BorderLayout.CENTER);
-        else if(choice == 2)
-            root.add(centerPanel_Wall() , BorderLayout.CENTER);
-        else
-            root.add(centerPanel() , BorderLayout.CENTER);
-
+        
         
         root.setVisible(true);
     }
