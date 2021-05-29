@@ -13,11 +13,16 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.awt.*;
 
+
 /**
  *
  * @author chobus
  */
 public class NeedRollSwing {
+    
+    JFrame root = new JFrame("NeedRollSwing");
+    
+    public static int choice = 0;
     
     JPanel topPanel(){
         JPanel rootTopPanel = new JPanel();
@@ -34,6 +39,24 @@ public class NeedRollSwing {
         rootCenterPanel.setLayout(new FlowLayout());
         //rootCenterPanel.setSize(300, 200);
         rootCenterPanel.setBackground(Color.gray);
+  
+                
+        return rootCenterPanel;
+    }
+    JPanel centerPanel_Room(){
+        JPanel rootCenterPanel = new JPanel();
+        rootCenterPanel.setLayout(new FlowLayout());
+        //rootCenterPanel.setSize(300, 200);
+        rootCenterPanel.setBackground(Color.green);
+  
+                
+        return rootCenterPanel;
+    }
+    JPanel centerPanel_Wall(){
+        JPanel rootCenterPanel = new JPanel();
+        rootCenterPanel.setLayout(new FlowLayout());
+        //rootCenterPanel.setSize(300, 200);
+        rootCenterPanel.setBackground(Color.yellow);
   
                 
         return rootCenterPanel;
@@ -60,7 +83,11 @@ public class NeedRollSwing {
         JButton btnExit = new JButton("Выход");
         btnExit.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
-                
+                int response = JOptionPane.showConfirmDialog(
+                        root, "Вы действительно хотите выйти?", "Выход", JOptionPane.YES_NO_OPTION);
+                if(response==JOptionPane.YES_OPTION)
+                    //root.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    System.exit(0);
             }
         });
         
@@ -103,14 +130,14 @@ public class NeedRollSwing {
         //btnSelectRoom.setBounds(0, 0, 95, 30);
         btnSelectRoom.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
-                JTextArea jtaTest = new JTextArea("Вы выбрали ");
+                choice = 1;
             }
         });
         JButton btnSelectWall = new JButton("Стена");
         //btnSelectRoom.setBounds(0, 0, 95, 30);
         btnSelectWall.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
-                
+                choice = 2;
             }
         });
         JButton btnAddWall = new JButton(" + Стена");
@@ -169,19 +196,25 @@ public class NeedRollSwing {
     
     NeedRollSwing(){
         
-        JFrame root = new JFrame("NeedRollSwing");
         root.setLayout(new BorderLayout());
         root.setSize(900,800);
         root.setBackground(Color.yellow);
         root.setResizable(true);
-        root.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);       
-        
+        root.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);         
         
         root.add(topPanel() , BorderLayout.NORTH);
         root.add(bottomPanel() , BorderLayout.SOUTH);
-        root.add(centerPanel() , BorderLayout.CENTER);
+        //root.add(centerPanel() , BorderLayout.CENTER);
         root.add(leftPanel() , BorderLayout.WEST);
         root.add(rightPanel() , BorderLayout.EAST);
+        
+        if(choice == 1)
+            root.add(centerPanel_Room() , BorderLayout.CENTER);
+        else if(choice == 2)
+            root.add(centerPanel_Wall() , BorderLayout.CENTER);
+        else
+            root.add(centerPanel() , BorderLayout.CENTER);
+
         
         root.setVisible(true);
     }
