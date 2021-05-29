@@ -194,7 +194,7 @@ public class NeedRollSwing {
         JButton btnRoomDiscard = new JButton("Сбросить");
         JButton btnAddRoom = new JButton("Добавить");
         JLabel jlRoomIntro = new JLabel("Параметры Стены");
-        JLabel jlRoomParametr = new JLabel("Введите размер стены");
+        JLabel jlRoomParametr = new JLabel("Введите размер оклеиваемой стены");
         JLabel jlRoomWidth = new JLabel("ширина");         
         JLabel jlRoomLength = new JLabel("длина");
         JLabel jlRoomHeight = new JLabel("высота");
@@ -225,12 +225,143 @@ public class NeedRollSwing {
         return rootCenterPanel;
     }
     
+    JPanel centerPanel_Wall_del(){
+        JPanel rootCenterPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        //rootCenterPanel.setSize(300, 200);
+        //rootCenterPanel.setBackground(Color.green);
+        JPanel layoutRoomParametr = new JPanel(new GridLayout(4,3,10,5));
+        JPanel layoutRoomParametrButton = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        
+        JButton btnRoomDiscard = new JButton("Сбросить");
+        JButton btnAddRoom = new JButton("Удалить");
+        JLabel jlRoomIntro = new JLabel("Параметры Стены");
+        JLabel jlRoomParametr = new JLabel("Введите размер неоклеиваемой стены");
+        JLabel jlRoomWidth = new JLabel("ширина");         
+        JLabel jlRoomLength = new JLabel("длина");
+        JLabel jlRoomHeight = new JLabel("высота");
+        JLabel jlRoomWidthMeasure = new JLabel("м");         
+        JLabel jlRoomLengthMeasure = new JLabel("м");
+        JLabel jlRoomHeightMeasure = new JLabel("м");
+        JTextField jtfRoomWidth = new JTextField(5);
+        JTextField jtfRoomLength = new JTextField(5);
+        JTextField jtfRoomHeight = new JTextField(5);
+        layoutRoomParametrButton.add(btnRoomDiscard);
+        layoutRoomParametrButton.add(btnAddRoom);
+        
+        layoutRoomParametr.add(jlRoomWidth);
+        layoutRoomParametr.add(jtfRoomWidth);
+        layoutRoomParametr.add(jlRoomWidthMeasure);
+        layoutRoomParametr.add(jlRoomLength);
+        layoutRoomParametr.add(jtfRoomLength);
+        layoutRoomParametr.add(jlRoomLengthMeasure);
+        layoutRoomParametr.add(jlRoomHeight);
+        layoutRoomParametr.add(jtfRoomHeight);
+        layoutRoomParametr.add(jlRoomHeightMeasure);
+        
+        rootCenterPanel.add(jlRoomIntro);
+        rootCenterPanel.add(jlRoomParametr);
+        rootCenterPanel.add(layoutRoomParametr);
+        rootCenterPanel.add(layoutRoomParametrButton);
+                
+        return rootCenterPanel;
+    }
+    
+    JPanel centerPanel_Window(){
+        JPanel rootCenterPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        //rootCenterPanel.setSize(300, 200);
+        //rootCenterPanel.setBackground(Color.green);
+        JPanel layoutRoomParametr = new JPanel(new GridLayout(2,3,10,5));
+        JPanel layoutRoomParametrButton = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        
+        JButton btnRoomDiscard = new JButton("Сбросить");
+        JButton btnAddRoom = new JButton("Удалить");
+        JLabel jlRoomIntro = new JLabel("Параметры Окна");
+        JLabel jlRoomParametr = new JLabel("Введите размер оконного проёма");
+        JLabel jlRoomWidth = new JLabel("ширина");         
+        //JLabel jlRoomLength = new JLabel("длина");
+        JLabel jlRoomHeight = new JLabel("высота");
+        JLabel jlRoomWidthMeasure = new JLabel("м");         
+        JLabel jlRoomLengthMeasure = new JLabel("м");
+        JLabel jlRoomHeightMeasure = new JLabel("м");
+        JTextField jtfRoomWidth = new JTextField(5);
+        //JTextField jtfRoomLength = new JTextField(5);
+        JTextField jtfRoomHeight = new JTextField(5);
+        layoutRoomParametrButton.add(btnRoomDiscard);
+        layoutRoomParametrButton.add(btnAddRoom);
+        
+        layoutRoomParametr.add(jlRoomWidth);
+        layoutRoomParametr.add(jtfRoomWidth);
+        layoutRoomParametr.add(jlRoomWidthMeasure);
+        //layoutRoomParametr.add(jlRoomLength);
+        //layoutRoomParametr.add(jtfRoomLength);
+        //layoutRoomParametr.add(jlRoomLengthMeasure);
+        layoutRoomParametr.add(jlRoomHeight);
+        layoutRoomParametr.add(jtfRoomHeight);
+        layoutRoomParametr.add(jlRoomHeightMeasure);
+        
+        rootCenterPanel.add(jlRoomIntro);
+        rootCenterPanel.add(jlRoomParametr);
+        rootCenterPanel.add(layoutRoomParametr);
+        rootCenterPanel.add(layoutRoomParametrButton);
+                
+        return rootCenterPanel;
+    }
+    
+    JPanel centerPanel_Door(){
+        JPanel rootCenterPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        //rootCenterPanel.setSize(300, 200);
+        //rootCenterPanel.setBackground(Color.green);
+        JPanel layoutRoomParametr = new JPanel(new GridLayout(2,3,10,5));
+        JPanel layoutRoomParametrButton = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        
+        JButton btnRoomDiscard = new JButton("Сбросить");
+        JButton btnAddRoom = new JButton("Удалить");
+        JLabel jlRoomIntro = new JLabel("Параметры Двери");
+        JLabel jlRoomParametr = new JLabel("Введите размер дверного проёма");
+        JLabel jlRoomWidth = new JLabel("ширина");         
+        //JLabel jlRoomLength = new JLabel("длина");
+        JLabel jlRoomHeight = new JLabel("высота");
+        JLabel jlRoomWidthMeasure = new JLabel("м");         
+        JLabel jlRoomLengthMeasure = new JLabel("м");
+        JLabel jlRoomHeightMeasure = new JLabel("м");
+        JTextField jtfRoomWidth = new JTextField(5);
+        //JTextField jtfRoomLength = new JTextField(5);
+        JTextField jtfRoomHeight = new JTextField(5);
+        layoutRoomParametrButton.add(btnRoomDiscard);
+        layoutRoomParametrButton.add(btnAddRoom);
+        
+        layoutRoomParametr.add(jlRoomWidth);
+        layoutRoomParametr.add(jtfRoomWidth);
+        layoutRoomParametr.add(jlRoomWidthMeasure);
+        //layoutRoomParametr.add(jlRoomLength);
+        //layoutRoomParametr.add(jtfRoomLength);
+        //layoutRoomParametr.add(jlRoomLengthMeasure);
+        layoutRoomParametr.add(jlRoomHeight);
+        layoutRoomParametr.add(jtfRoomHeight);
+        layoutRoomParametr.add(jlRoomHeightMeasure);
+        
+        rootCenterPanel.add(jlRoomIntro);
+        rootCenterPanel.add(jlRoomParametr);
+        rootCenterPanel.add(layoutRoomParametr);
+        rootCenterPanel.add(layoutRoomParametrButton);
+                
+        return rootCenterPanel;
+    }
+    
     JPanel bottomPanel(){
-        JPanel rootBottomPanel = new JPanel();
-        rootBottomPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+        JPanel rootBottomPanel = new JPanel(new GridLayout(2,3));
+        JPanel rootBottomPanel_below = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JPanel rootBottomPanel_above = new JPanel(new FlowLayout(FlowLayout.CENTER));
         rootBottomPanel.setBackground(Color.blue);
         //rootBottomPanel.setSize(450, 150);
         
+        JButton btnCalculate = new JButton("Расчитать");
+        btnCalculate.setPreferredSize(new Dimension(300,40));
+        btnCalculate.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae){
+                
+            }
+        });
         JButton btnSave = new JButton("Сохранить");
         btnSave.setPreferredSize(new Dimension(150,30));
         btnSave.addActionListener(new ActionListener(){
@@ -257,9 +388,13 @@ public class NeedRollSwing {
             }
         });
         
-        rootBottomPanel.add(btnSave);
-        rootBottomPanel.add(btnDiscard);
-        rootBottomPanel.add(btnExit);
+        rootBottomPanel_above.add(btnCalculate);
+        rootBottomPanel_below.add(btnSave);
+        rootBottomPanel_below.add(btnDiscard);
+        rootBottomPanel_below.add(btnExit);
+        
+        rootBottomPanel.add(rootBottomPanel_above);
+        rootBottomPanel.add(rootBottomPanel_below);
         
         return rootBottomPanel;
     }
@@ -288,7 +423,7 @@ public class NeedRollSwing {
     JPanel leftPanel(){
         
         JPanel rootLeftPanel = new JPanel();
-        rootLeftPanel.setLayout(new GridLayout(15,1, 10,10));                           // 8-rows; 0-col
+        rootLeftPanel.setLayout(new GridLayout(11,1, 10,10));                           // 8-rows; 0-col
         //rootLeftPanel.setSize(450, 660);
         rootLeftPanel.setBackground(Color.gray);
         
@@ -357,21 +492,42 @@ public class NeedRollSwing {
         //btnSelectRoom.setBounds(0, 0, 95, 30);
         btnDelArea.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
+                root.setLayout(new BorderLayout());
                 
+                root.add(topPanel() , BorderLayout.NORTH);
+                root.add(bottomPanel() , BorderLayout.SOUTH);           
+                root.add(leftPanel() , BorderLayout.WEST);
+                root.add(rightPanel() , BorderLayout.EAST);
+                root.add(centerPanel_Wall_del() , BorderLayout.CENTER);
+                root.setVisible(true);         
             }
         });
-        JButton btnAddWindow = new JButton(" + Окно");
+        JButton btnAddWindow = new JButton(" - Окно");
         //btnSelectRoom.setBounds(0, 0, 95, 30);
         btnAddWindow.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
+                root.setLayout(new BorderLayout());
                 
+                root.add(topPanel() , BorderLayout.NORTH);
+                root.add(bottomPanel() , BorderLayout.SOUTH);           
+                root.add(leftPanel() , BorderLayout.WEST);
+                root.add(rightPanel() , BorderLayout.EAST);
+                root.add(centerPanel_Window() , BorderLayout.CENTER);
+                root.setVisible(true);         
             }
         });
-        JButton btnAddDoor = new JButton(" + Дверь");
+        JButton btnAddDoor = new JButton(" - Дверь");
         //btnSelectRoom.setBounds(0, 0, 95, 30);
         btnAddDoor.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
+                root.setLayout(new BorderLayout());
                 
+                root.add(topPanel() , BorderLayout.NORTH);
+                root.add(bottomPanel() , BorderLayout.SOUTH);           
+                root.add(leftPanel() , BorderLayout.WEST);
+                root.add(rightPanel() , BorderLayout.EAST);
+                root.add(centerPanel_Door() , BorderLayout.CENTER);
+                root.setVisible(true);         
             }
         });
         
@@ -393,8 +549,8 @@ public class NeedRollSwing {
         rootLeftPanel.add(btnDelArea);
         rootLeftPanel.add(btnAddWindow);
         rootLeftPanel.add(btnAddDoor);        
-        rootLeftPanel.add(jlTypeWallpaper);
-        rootLeftPanel.add(jcbListTypeWallpaper);
+        //rootLeftPanel.add(jlTypeWallpaper);
+        //rootLeftPanel.add(jcbListTypeWallpaper);
         
         rootLeftPanel.setVisible(true);
         
@@ -404,7 +560,7 @@ public class NeedRollSwing {
     NeedRollSwing(){
         
         //root.setLayout(new BorderLayout());
-        root.setSize(720,800);
+        root.setSize(720,700);
         root.setResizable(true);
         root.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
