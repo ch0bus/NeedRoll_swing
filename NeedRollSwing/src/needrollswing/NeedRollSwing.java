@@ -47,26 +47,32 @@ public class NeedRollSwing {
     JPanel centerPanel_Room(){
         JPanel rootCenterPanel = new JPanel();
         rootCenterPanel.setBackground(Color.green);
-        rootCenterPanel.setLayout(new FlowLayout());
+        rootCenterPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
         JPanel layoutRoomParametr = new JPanel();
         layoutRoomParametr.setLayout(new GridLayout(3,2,10,5));
         
-        JLabel jlRoomParametr = new JLabel("Введите необходимы параметры");
+        JLabel jlRoomParametr = new JLabel("Введите необходимыe параметры");
         JLabel jlRoomWidth = new JLabel("ширина");         
         JLabel jlRoomLength = new JLabel("длина");
         JLabel jlRoomHeight = new JLabel("высота");
+        JLabel jlRoomWidthMeasure = new JLabel("м");         
+        JLabel jlRoomLengthMeasure = new JLabel("м");
+        JLabel jlRoomHeightMeasure = new JLabel("м");
         JTextField jtfRoomWidth = new JTextField(5);
         JTextField jtfRoomLength = new JTextField(5);
         JTextField jtfRoomHeight = new JTextField(5);
         
         layoutRoomParametr.add(jlRoomWidth);
         layoutRoomParametr.add(jtfRoomWidth);
+        layoutRoomParametr.add(jlRoomWidthMeasure);
         layoutRoomParametr.add(jlRoomLength);
         layoutRoomParametr.add(jtfRoomLength);
+        layoutRoomParametr.add(jlRoomLengthMeasure);
         layoutRoomParametr.add(jlRoomHeight);
         layoutRoomParametr.add(jtfRoomHeight);
+        layoutRoomParametr.add(jlRoomHeightMeasure);
         
-        //rootCenterPanel.add(jlRoomParametr);
+        rootCenterPanel.add(jlRoomParametr);
         rootCenterPanel.add(layoutRoomParametr);
         
         return rootCenterPanel;
@@ -222,7 +228,7 @@ public class NeedRollSwing {
     NeedRollSwing(){
         
         //root.setLayout(new BorderLayout());
-        root.setSize(800,600);
+        root.setSize(700,600);
         root.setResizable(true);
         root.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
