@@ -20,7 +20,7 @@ import java.awt.*;
  */
 public class NeedRollSwing {
     
-    JFrame root = new JFrame("NeedRollSwing");
+    public static JFrame root = new JFrame("NeedRollSwing");
     
     
     
@@ -49,9 +49,14 @@ public class NeedRollSwing {
         rootCenterPanel.setBackground(Color.green);
         rootCenterPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
         JPanel layoutRoomParametr = new JPanel();
-        layoutRoomParametr.setLayout(new GridLayout(3,2,10,5));
+        layoutRoomParametr.setLayout(new GridLayout(4,2,10,5));
+        JPanel layoutRoomParametrButton = new JPanel();
+        layoutRoomParametrButton.setLayout(new FlowLayout(FlowLayout.CENTER));
         
-        JLabel jlRoomParametr = new JLabel("Введите необходимыe параметры");
+        JButton btnRoomDiscard = new JButton("Сбросить");
+        JButton btnAddRoom = new JButton("Добавить");
+        JLabel jlRoomIntro = new JLabel("Параметры Комнаты");
+        JLabel jlRoomParametr = new JLabel("Введите размеры комнаты");
         JLabel jlRoomWidth = new JLabel("ширина");         
         JLabel jlRoomLength = new JLabel("длина");
         JLabel jlRoomHeight = new JLabel("высота");
@@ -61,6 +66,34 @@ public class NeedRollSwing {
         JTextField jtfRoomWidth = new JTextField(5);
         JTextField jtfRoomLength = new JTextField(5);
         JTextField jtfRoomHeight = new JTextField(5);
+        layoutRoomParametrButton.add(btnRoomDiscard);
+        layoutRoomParametrButton.add(btnAddRoom);
+        
+        JButton btnWindowDiscard = new JButton("Сбросить");
+        JButton btnAddWindow = new JButton("Добавить");
+        JLabel jlWindowParametr = new JLabel("Введите размеры окна");
+        JLabel jlWindowWidth = new JLabel("ширина");         
+        JLabel jlWindowLength = new JLabel("длина");
+        JLabel jlWindowHeight = new JLabel("высота");
+        JLabel jlWindowWidthMeasure = new JLabel("м");         
+        JLabel jlWindowLengthMeasure = new JLabel("м");
+        JLabel jlWindowHeightMeasure = new JLabel("м");
+        JTextField jtfWindowWidth = new JTextField(5);
+        JTextField jtfWindowLength = new JTextField(5);
+        JTextField jtfWindowHeight = new JTextField(5);
+        JButton btnDoorDiscard = new JButton("Сбросить");
+        JButton btnAddDoor = new JButton("Добавить");
+        JLabel jlDoorParametr = new JLabel("Введите размеры двери");
+        JLabel jlDoorWidth = new JLabel("ширина");         
+        JLabel jlDoorLength = new JLabel("длина");
+        JLabel jlDoorHeight = new JLabel("высота");
+        JLabel jlDoorWidthMeasure = new JLabel("м");         
+        JLabel jlDoorLengthMeasure = new JLabel("м");
+        JLabel jlDoorHeightMeasure = new JLabel("м");
+        JTextField jtfDoorWidth = new JTextField(5);
+        JTextField jtfDoorLength = new JTextField(5);
+        JTextField jtfDoorHeight = new JTextField(5);
+        
         
         layoutRoomParametr.add(jlRoomWidth);
         layoutRoomParametr.add(jtfRoomWidth);
@@ -72,8 +105,12 @@ public class NeedRollSwing {
         layoutRoomParametr.add(jtfRoomHeight);
         layoutRoomParametr.add(jlRoomHeightMeasure);
         
+        rootCenterPanel.add(jlRoomIntro);
         rootCenterPanel.add(jlRoomParametr);
         rootCenterPanel.add(layoutRoomParametr);
+        rootCenterPanel.add(layoutRoomParametrButton);
+        //rootCenterPanel.add(btnRoomDiscard);
+        //rootCenterPanel.add(btnAddRoom);
         
         return rootCenterPanel;
     }
@@ -228,7 +265,7 @@ public class NeedRollSwing {
     NeedRollSwing(){
         
         //root.setLayout(new BorderLayout());
-        root.setSize(700,600);
+        root.setSize(600,800);
         root.setResizable(true);
         root.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
